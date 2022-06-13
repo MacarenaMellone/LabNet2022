@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp4.EF.Entities", "Tp4.EF.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp4.EF.Common", "Tp4.EF.Common\Tp4.EF.Common.csproj", "{349BAB03-D6F4-4398-89F6-C2C1BE31E2B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp4.EF.UITests", "Tp4.EF.UITests\Tp4.EF.UITests.csproj", "{2F806701-7C84-473D-9ABF-5FF6723E8D2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{349BAB03-D6F4-4398-89F6-C2C1BE31E2B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{349BAB03-D6F4-4398-89F6-C2C1BE31E2B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{349BAB03-D6F4-4398-89F6-C2C1BE31E2B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F806701-7C84-473D-9ABF-5FF6723E8D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F806701-7C84-473D-9ABF-5FF6723E8D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F806701-7C84-473D-9ABF-5FF6723E8D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F806701-7C84-473D-9ABF-5FF6723E8D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

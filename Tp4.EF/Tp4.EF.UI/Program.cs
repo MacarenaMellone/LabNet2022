@@ -45,16 +45,16 @@ namespace Tp4.EF.UI
                     UpdateCategories();
                     return true;
                 case "5":
-                    GetShippers(); ;
+                    GetShippers();
                     return true;
                 case "6":
-                    AddShippers(); ;
+                    AddShippers();
                     return true;
                 case "7":
-                    DeleteShippers(); ;
+                    DeleteShippers();
                     return true;
                 case "8":
-                    UpdateShippers(); ;
+                    UpdateShippers();
                     return true;
                 case "9":
                     return false;
