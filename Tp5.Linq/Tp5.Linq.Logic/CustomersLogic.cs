@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tp5.Linq.Data;
 using Tp5.Linq.Entities;
 
 namespace Tp5.Linq.Logic
@@ -39,7 +36,7 @@ namespace Tp5.Linq.Logic
             return query.ToList();
         }
         //7
-        public List<Customers> CustomerOrder()
+        public List<Tuple<Customers, Orders>> CustomerOrder()
         {
             DateTime fechaOrden = Convert.ToDateTime("1/1/1997");
             var query = from c in context.Customers
@@ -47,11 +44,9 @@ namespace Tp5.Linq.Logic
                         on c.CustomerID equals o.CustomerID
                         where c.Region == "WA" && o.OrderDate > fechaOrden
                         orderby c.CustomerID
-                        select new Customers
-                        { CustomerID = c.CustomerID,
-                        Region = c.Region};
+                        select new {c,o};
 
-            return query.ToList();
+            return query.AsEnumerable().Select(t => new Tuple<Customers, Orders>(t.c,t.o)).ToList();
         }
         //8
         public IEnumerable<Customers> CustomerRegion3()
@@ -60,7 +55,17 @@ namespace Tp5.Linq.Logic
             return query.ToList();
         }
         //13
+        public List<Tuple<Customers, int>> CustomerOrdersA()
+        {
+            var query = from c in context.Customers
+                        join o in context.Orders
+                        on c.CustomerID equals o.CustomerID
+                        group c by c.CustomerID into co
+                        select new {
+                            Customer = co.FirstOrDefault(),
+                            Cant = co.Count()};
 
+            return query.AsEnumerable().Select(t => new Tuple<Customers, int>(t.Customer, t.Cant)).ToList();
+        }
     }
-
 }

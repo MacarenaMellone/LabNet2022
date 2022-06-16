@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tp5.Linq.Entities;
 using Tp5.Linq.Logic;
 
@@ -87,8 +85,8 @@ namespace Tp5.Linq.Prueba
 
             Console.Clear();
             Console.WriteLine("Ejercicio 6\n");
-            List<Customers> customers = customersLogic.CustomerNombre();
             Console.WriteLine("Mayuscula - Minuscula\n");
+            List<Customers> customers = customersLogic.CustomerNombre();
             foreach (var c in customers){
                 Console.WriteLine($"{c.ContactName.ToUpper()} - {c.ContactName.ToLower()}");
             }
@@ -97,7 +95,20 @@ namespace Tp5.Linq.Prueba
             Console.ReadLine();
         }
         //7
+        public static void Ejercicio7()
+        {
 
+            Console.Clear();
+            Console.WriteLine("Ejercicio 7\n");
+            Console.WriteLine("Customers - Orders\n");
+            var tuple = customersLogic.CustomerOrder();
+            foreach (var c in tuple){
+                Console.WriteLine($"{c.Item1.CustomerID} {c.Item1.CompanyName} {c.Item1.Region} - {c.Item2.OrderID} {c.Item2.OrderDate}");
+            }
+
+            Console.WriteLine("\r\nPresione enter para volver al menu principal");
+            Console.ReadLine();
+        }
         //8
         public static void Ejercicio8() {
 
@@ -145,7 +156,22 @@ namespace Tp5.Linq.Prueba
 
         }
         //11
+        public static void Ejercicio11()
+        {
 
+            Console.Clear();
+            Console.WriteLine("Ejercicio 11\n");
+            Console.WriteLine("Categories asociadas\n");
+            var categoriesLogic = new CategoriesLogic();
+            List<Categories> categories = categoriesLogic.CategoriesProd();
+            IEnumerable<Categories> noduplicadas = categories.Distinct();
+            foreach (var c in noduplicadas){
+                Console.WriteLine($"{c.CategoryID} - {c.CategoryName}");
+            }
+
+            Console.WriteLine("\r\nPresione enter para volver al menu principal");
+            Console.ReadLine();
+        }
         //12
         public static void Ejercicio12()
         {
@@ -161,6 +187,20 @@ namespace Tp5.Linq.Prueba
 
         }
         //13
+        public static void Ejercicio13()
+        {
+
+            Console.Clear();
+            Console.WriteLine("Ejercicio 13\n");
+            Console.WriteLine("Ordenes asociadas - Customers \n");
+            var tuple = customersLogic.CustomerOrdersA();
+            foreach (var c in tuple){
+                Console.WriteLine($"{c.Item2} - {c.Item1.CustomerID} {c.Item1.CompanyName}");
+            }
+
+            Console.WriteLine("\r\nPresione enter para volver al menu principal");
+            Console.ReadLine();
+        }
 
     }
 }

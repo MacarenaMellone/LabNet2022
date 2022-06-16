@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
-using Tp5.Linq.Entities;
-using Tp5.Linq.Logic;
 
 namespace Tp5.Linq.Prueba
 {
@@ -63,7 +56,7 @@ namespace Tp5.Linq.Prueba
                     MothodsMenu.Ejercicio6();
                     return true;
                 case "7":
-                    MothodsMenu.Ejercicio8();
+                    MothodsMenu.Ejercicio7();
                     return true;
                 case "8":
                     MothodsMenu.Ejercicio8();
@@ -75,13 +68,13 @@ namespace Tp5.Linq.Prueba
                     MothodsMenu.Ejercicio10();
                     return true;
                 case "11":
-                    MothodsMenu.Ejercicio8();
+                    MothodsMenu.Ejercicio11();
                     return true;
                 case "12":
                     MothodsMenu.Ejercicio12();
                     return true;
                 case "13":
-                    MothodsMenu.Ejercicio8();
+                    MothodsMenu.Ejercicio13();
                     return true;
                 case "14":
                     return false;

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tp5.Linq.Data;
 using Tp5.Linq.Entities;
 
 namespace Tp5.Linq.Logic
@@ -58,8 +53,6 @@ namespace Tp5.Linq.Logic
 
             return query.ToList();
         }
-        //11
-
         //12
         public Products FirstProduct(){
 
@@ -69,20 +62,5 @@ namespace Tp5.Linq.Logic
             return query.First();
 
         }
-
-
-
-        /*
-        public static void ProductsStock(IEnumerable)
-        {
-            ProductsLogic productsLogic = new ProductsLogic();
-
-            var query2 = Products.Where(p => p.UnitsInStock = 0)
-                .Select(u => u);
-            foreach (Products products in query2)
-            {
-                Console.WriteLine(products.UnitsInStock);
-            }
-        }*/
     }
 }
