@@ -60,17 +60,7 @@ namespace Tp5.Linq.Logic
             return query.ToList();
         }
         //13
-       /* public List<Customers> CustomerOrdersA()
-        {
-            var query = from c in context.Customers
-                        join o in context.Orders
-                        on c.CustomerID equals o.CustomerID
-                        group c by c.CustomerID into cu
-                        select new Customers{
-                            cantidad = cu.Count(),
-                            CustomerID = cu.Key};
-            return query.ToList();
-        }*/
+
     }
 
 }

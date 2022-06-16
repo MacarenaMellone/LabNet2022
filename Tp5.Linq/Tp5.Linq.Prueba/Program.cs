@@ -89,25 +89,5 @@ namespace Tp5.Linq.Prueba
                     return true;
             }
         }
-
-        /* public static void ProductsStock()
-         {
-             ProductsLogic productsLogic = new ProductsLogic();
-
-             var query2 = Products.Where(u => u.UnitsInStock = 0)
-                 .Select(u => u);
-             foreach (Products products in query2)
-             {
-                 Console.WriteLine(products.UnitsInStock);
-             }
-         }
-         public static void ProdStockPrice()
-         {
-             var query3 = from Products products in productsLogic.GetAll()
-                          where products.UnitsInStock > 0 products.UnitPrice > 3
-                          orderby UnitPrice desc;
-         }*/
-
-
     }
 }
