@@ -14,11 +14,12 @@ namespace Tp7.EF.MVC.Controllers
         // GET: Categories
         public ActionResult Index()
         {
-            List<Tp4.EF.Entities.Categories> categories = logic.GetAll();
+            List<Categories> categories = logic.GetAll();
 
             List<CategoriesView> categoriesViews = categories.Select(s => new CategoriesView {
                 Id = s.CategoryID,
-                Name = s.CategoryName
+                Name = s.CategoryName,
+                Description = s.Description
             }).ToList();
             return View(categoriesViews);
         }
@@ -26,17 +27,20 @@ namespace Tp7.EF.MVC.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public ActionResult insert(CategoriesView categoriesView)
         {
             try
             {
-                var categoriesEntity = new Categories { CategoryName = categoriesView.Name };
+                var categories = new Categories
+                {
+                    CategoryName = categoriesView.Name,
+                    Description = categoriesView.Description
+                };
 
-                logic.Add(categoriesEntity);
+                logic.Add(categories);
 
-                return RedirectToAction("Index");    
+                return RedirectToAction("Index");
 
             }
             catch (Exception ex)
@@ -44,8 +48,6 @@ namespace Tp7.EF.MVC.Controllers
                 return RedirectToAction("Index", "Error");
             }
         }
-
-
         public ActionResult Delete(int id)
         {
             try
@@ -61,5 +63,39 @@ namespace Tp7.EF.MVC.Controllers
             
 
         }
+        public ActionResult Edit(int id)
+        {
+            Categories categories = logic.GetId(id);
+            CategoriesView categoriesView = new CategoriesView{
+                Id = categories.CategoryID,
+                Name = categories.CategoryName,
+                Description= categories.Description
+            };
+            return View(categoriesView);
+
+        }
+
+        [HttpPost]
+        public ActionResult Edit(CategoriesView categoriesView)
+        {
+            try
+            {
+                var categories = new Categories
+                {
+                    CategoryID = categoriesView.Id,
+                    CategoryName = categoriesView.Name,
+                    Description = categoriesView.Description
+                };
+                logic.Update(categories);
+                return RedirectToAction("Index");
+
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
+
+
     }
 }

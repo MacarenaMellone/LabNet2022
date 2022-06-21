@@ -1,0 +1,17 @@
+﻿@model Tp7.EF.MVC.Models.CategoriesView
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h1>Modificar Categoria</h1><br />
+@using (Html.BeginForm("Edit", "Categories", FormMethod.Post))
+{
+    <label>Nombre Categoria:</label> @Html.TextBoxFor(c => c.Name)<br />
+    <label>Descripcion Categoria:</label> @Html.TextBoxFor(c => c.Description)<br />
+    <br/>
+    <input type="submit" class="btn btn-success" value="Guardar" />
+}
+<br /><br />
+<div>
+    @Html.ActionLink("Volver", "Index", "Categories")
+</div>

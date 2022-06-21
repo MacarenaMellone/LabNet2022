@@ -9,9 +9,11 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">ID Categoria</th>
-            <th scope="col">Nombre Categoria</th>
-            <th scope="col">Action</th>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion Categoria</th>
+            <th scope="col">Actions</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +22,9 @@
             <tr>
                 <th scope="row">@cat.Id</th>
                 <td>@cat.Name</td>
-                <td>@Html.ActionLink("Borrar", "Delete", new { id = cat.Id}, new {onclick = "return confirm('Esta seguro que quiere borrar?')"})</td>
+                <td>@cat.Description</td>
+                <td>@Html.ActionLink("Editar", "Edit", new { id = cat.Id }, "Categories")</td>
+                <td>@Html.ActionLink("Borrar", "Delete", new { id = cat.Id }, new { onclick = "return confirm('Esta seguro que quiere borrar?')" })</td>
             </tr>
 
         }

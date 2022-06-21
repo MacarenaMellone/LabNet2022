@@ -8,23 +8,28 @@ namespace Tp4.EF.Logic
 {
     public class CategoriesLogic : BaseLogic, ILogic<Categories>
     {
-        public List<Categories> GetAll(){
+        public List<Categories> GetAll() {
             return context.Categories.ToList();
         }
-        public void Add(Categories newCategories){
+        public void Add(Categories newCategories) {
             context.Categories.Add(newCategories);
             context.SaveChanges();
         }
-        public void Delete(int id){
+        public void Delete(int id) {
             var categoriesAEliminar = context.Categories.Find(id);
             context.Categories.Remove(categoriesAEliminar);
-            context.SaveChanges();    
+            context.SaveChanges();
         }
-        public void Update(Categories categories){
+        public void Update(Categories categories) {
             var categoriesUpdate = context.Categories.Find(categories.CategoryID);
             categoriesUpdate.CategoryName = categories.CategoryName;
             categoriesUpdate.Description = categories.Description;
             context.SaveChanges();
+        }
+
+        public Categories GetId(int id)
+        {
+            return context.Categories.Find(id);
         }
     }
 }
