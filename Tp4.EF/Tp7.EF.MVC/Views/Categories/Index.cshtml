@@ -1,0 +1,27 @@
+﻿@model List<Tp4.EF.Entities.Categories>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Index categorias</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID Categoria</th>
+            <th scope="col">Nombre Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <th scope="row">@cat.CategoryID</th>
+                <td>@cat.CategoryName</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
