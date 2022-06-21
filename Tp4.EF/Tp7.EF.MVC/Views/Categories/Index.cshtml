@@ -1,4 +1,4 @@
-﻿@model List<Tp4.EF.Entities.Categories>
+﻿@model List<Tp7.EF.MVC.Models.CategoriesView>
 
 @{
     ViewBag.Title = "Categories";
@@ -11,17 +11,23 @@
         <tr>
             <th scope="col">ID Categoria</th>
             <th scope="col">Nombre Categoria</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var cat in Model)
         {
             <tr>
-                <th scope="row">@cat.CategoryID</th>
-                <td>@cat.CategoryName</td>
+                <th scope="row">@cat.Id</th>
+                <td>@cat.Name</td>
+                <td>@Html.ActionLink("Borrar", "Delete", new { id = cat.Id}, new {onclick = "return confirm('Esta seguro que quiere borrar?')"})</td>
             </tr>
 
         }
     </tbody>
 </table>
+
+<div>
+    @Html.ActionLink("Insertar Nueva Categoria", "Insert", "Categories")
+</div>
 

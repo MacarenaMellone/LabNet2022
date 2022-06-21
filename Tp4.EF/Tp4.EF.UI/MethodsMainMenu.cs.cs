@@ -43,8 +43,7 @@ namespace Tp4.EF.UI
                 string valor2;
                 valor2 = Console.ReadLine();
 
-                categoriesLogic.Add(new Categories
-                {
+                categoriesLogic.Add(new Categories{
                     CategoryName = valor1,
                     Description = valor2
                 });

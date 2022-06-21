@@ -1,0 +1,11 @@
+﻿@model Tp7.EF.MVC.Models.CategoriesView
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h1>Insert Categories</h1>
+@using (Html.BeginForm("Insert", "Categories", FormMethod.Post))
+ {
+    <label>Descripcion:</label> @Html.TextBoxFor(c => c.Name)
+    <input type="submit" class="btn-success" value="Guardar"/>
+ }
