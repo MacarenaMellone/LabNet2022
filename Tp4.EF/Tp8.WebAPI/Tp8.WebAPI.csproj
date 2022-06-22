@@ -156,10 +156,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShippersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ShippersView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,7 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Shippers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -245,6 +247,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tp4.EF.Entities\Tp4.EF.Entities.csproj">
+      <Project>{1729BDE3-7A8A-4AB6-8322-8B6906E64737}</Project>
+      <Name>Tp4.EF.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tp4.EF.Logic\Tp4.EF.Logic.csproj">
+      <Project>{28416C62-48E5-45E5-B802-295D04ED7D43}</Project>
+      <Name>Tp4.EF.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tp7.EF.MVC\Tp7.EF.MVC.csproj">
+      <Project>{746B4A45-8D0E-48D7-B83D-2E83D755F16F}</Project>
+      <Name>Tp7.EF.MVC</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -26,5 +26,9 @@ namespace Tp4.EF.Logic
             shippersUpdate.Phone = shippers.Phone;
             context.SaveChanges();
         }
+        public Shippers GetId(int id)
+        {
+            return context.Shippers.Find(id);
+        }
     }
 }
