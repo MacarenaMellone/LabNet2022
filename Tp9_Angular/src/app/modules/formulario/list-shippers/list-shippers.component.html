@@ -1,0 +1,24 @@
+<div>
+<br><p class="h1 text-center">Shippers</p>
+  <table class="table lista">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre Compañía</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let shippers of this.shippersData" >
+        <th scope="row">{{shippers.ID}}</th>
+        <td>{{shippers.Name}}</td>
+        <td>{{shippers.Phone}}</td>
+        <td><a href="#" (click)="onClickDelete(shippers.ID)">Borrar</a></td>
+        <td><a routerLink="../form" [queryParams]="{Id:shippers.ID}">Modificar</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="bnt btn-info" [routerLink]="['../form']">Agregar Shippers</button>
+</div>
+

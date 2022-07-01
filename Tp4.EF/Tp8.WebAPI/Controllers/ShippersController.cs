@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Tp4.EF.Entities;
 using Tp4.EF.Logic;
 using Tp8.WebAPI.Models;
 
 namespace Tp8.WebAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ShippersController : ApiController
     {
         // GET: Shippers
@@ -71,6 +73,7 @@ namespace Tp8.WebAPI.Controllers
             if (!ModelState.IsValid){
                 return BadRequest("Ha ocurrido un error");
             }
+            logic.Delete(id);
             return Ok("Eliminado exitosamente");
         }
     }
